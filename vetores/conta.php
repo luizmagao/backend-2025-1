@@ -8,7 +8,7 @@ $contasCorrentes = [
         'saldo' => 1000
     ],
     '019.876.543-21' => [
-        'titular' => 'Nikey',
+        'titular' => 'Mickey',
         'saldo' => 5000
     ],
     '247.878.765-54' => [
@@ -17,12 +17,25 @@ $contasCorrentes = [
     ]
 ];
 
+$conta = $_POST['conta'];
+$operacao = $_POST['operacao'] ?? null;
+$valor = $_POST['valor'];
+
 try {
 
-    sacar(
-        $contasCorrentes['123.456.789-10'],
-        $argv[1] ?? 0
-    );
+    if ($operacao == 'sacar') {
+        sacar(
+            $contasCorrentes[$conta],
+            $valor ?? 0
+        );
+    }
+
+    if ($operacao == 'depositar') {
+        deposito(
+            $contasCorrentes[$conta],
+            $valor ?? 0
+        );
+    }
 } catch (Error | Exception $e) {
     exibirMensagem('Algo errado com os parametros.');
 }

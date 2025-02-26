@@ -9,25 +9,29 @@
 
 <body>
 
-    Contas:
-    <br />
-    <select name="conta" id="">
-        <option value="123.456.789-10">Luiz Lins</option>
-        <option value='019.876.543-21'>Mickey</option>
-        <option value='247.878.765-54'>Carlos</option>
-    </select>
+    <form action="conta.php" method="POST">
+        Contas:
+        <br />
+        <select name="conta" id="">
+            <option value="123.456.789-10">Luiz Lins</option>
+            <option value='019.876.543-21'>Mickey</option>
+            <option value='247.878.765-54'>Carlos</option>
+        </select>
 
-    <hr />
-    Operação:
-    <br />
-    <input type="radio" value="sacar" name="operacao"> Sacar
-    <input type="radio" value="depositar" name="operacao"> Depositar
+        <hr />
+        Operação:
+        <br />
+        <input type="radio" value="sacar" name="operacao"> Sacar
+        <input type="radio" value="depositar" name="operacao"> Depositar
 
-    <hr />
-    Valor:
-    <br />
-    <input type="text" name="valor">
+        <hr />
+        Valor:
+        <br />
+        <input type="text" name="valor">
 
+        <hr>
+        <input type="submit" value="Enviar">
+    </form>
 
 
 
