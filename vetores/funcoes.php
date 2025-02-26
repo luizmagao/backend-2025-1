@@ -12,7 +12,7 @@ function sacar(array &$conta, float $valor)
         return false;
     } else {
         $conta['saldo'] -= $valor;
-        exibirMensagem("Saque realizado com sucesso!");
+        exibirMensagem("Saque de <strong>{$conta['titular']}</strong> realizado com sucesso!");
         return true;
     }
 }
@@ -20,7 +20,7 @@ function sacar(array &$conta, float $valor)
 function deposito(array &$conta, float $valor)
 {
     $conta['saldo'] += $valor;
-    exibirMensagem('Depósito realizado com sucesso!');
+    exibirMensagem("Depósito de <strong>{$conta['titular']}</strong> realizado com sucesso!");
 }
 
 function transferir(array &$contaPrincipal, array &$contaRecebe, $valor)
