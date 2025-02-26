@@ -2,7 +2,8 @@
 
 function exibirMensagem($texto)
 {
-    echo mb_strtoupper($texto) . '<br/>';
+    echo mb_strtoupper($texto) . PHP_EOL;
+    // echo mb_strtoupper($texto) . '<br/>';
 }
 
 function sacar(array &$conta, float $valor)

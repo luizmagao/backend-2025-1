@@ -1,31 +1,36 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-require 'funcoes.php';
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de conta bancária</title>
+</head>
 
-$contasCorrentes = [
-    '123.456.789-10' => [
-        'titular' => 'Luiz Lins',
-        'saldo' => 1000
-    ],
-    '019.876.543-21' => [
-        'titular' => 'Nikey',
-        'saldo' => 5000
-    ],
-    '247.878.765-54' => [
-        'titular' => 'Carlos',
-        'saldo' => 7500
-    ]
-];
+<body>
 
-try {
-    sacar(
-        $contasCorrentes['123.456.789-10'],
-        10
-    );
-} catch (Error | Exception $e) {
-    exibirMensagem('Algo errado com os parametros.');
-}
+    Contas:
+    <br />
+    <select name="conta" id="">
+        <option value="123.456.789-10">Luiz Lins</option>
+        <option value='019.876.543-21'>Mickey</option>
+        <option value='247.878.765-54'>Carlos</option>
+    </select>
 
-foreach ($contasCorrentes as $chave => $conta) {
-    exibirMensagem("CPF: $chave, Titular: $conta[titular], Saldo: $conta[saldo]");
-}
+    <hr />
+    Operação:
+    <br />
+    <input type="radio" value="sacar" name="operacao"> Sacar
+    <input type="radio" value="depositar" name="operacao"> Depositar
+
+    <hr />
+    Valor:
+    <br />
+    <input type="text" name="valor">
+
+
+
+
+</body>
+
+</html>
