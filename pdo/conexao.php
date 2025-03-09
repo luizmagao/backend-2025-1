@@ -18,17 +18,21 @@ $pdo = new PDO('sqlite:' . $caminho);
 // }
 
 // Inserir estudantes na entidade
-try {
-    $sqlInserir = "
-        INSERT INTO estudantes 
-        (id, nome, data_nascimento)
-        VALUES
-        (NULL, 'Luiz Lins', '1985-10-27'),
-        (NULL, 'Maria Ires', '1954-07-12'),
-        (NULL, 'Iluise Miranda', '1987-08-17'),
-        (NULL, 'João Abílio', '1983-10-02');
-    ";
-    echo $pdo->exec($sqlInserir) . PHP_EOL;
-} catch (PDOException $e) {
-    echo "Erro ao tentar inserir dados: {$e->getMessage()}" . PHP_EOL;
-}
+// try {
+//     $sqlInserir = "
+//         INSERT INTO estudantes 
+//         (id, nome, data_nascimento)
+//         VALUES
+//         (NULL, 'Luiz Lins', '1985-10-27'),
+//         (NULL, 'Maria Ires', '1954-07-12'),
+//         (NULL, 'Iluise Miranda', '1987-08-17'),
+//         (NULL, 'João Abílio', '1983-10-02');
+//     ";
+//     echo $pdo->exec($sqlInserir) . PHP_EOL;
+// } catch (PDOException $e) {
+//     echo "Erro ao tentar inserir dados: {$e->getMessage()}" . PHP_EOL;
+// }
+
+// listar estudantes
+$resultado = $pdo->query('SELECT * FROM estudantes;');
+print_r($resultado->fetchAll());
