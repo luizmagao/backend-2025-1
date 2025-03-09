@@ -28,8 +28,7 @@ try {
         (NULL, 'Iluise Miranda', '1987-08-17'),
         (NULL, 'João Abílio', '1983-10-02');
     ";
+    echo $pdo->exec($sqlInserir) . PHP_EOL;
 } catch (PDOException $e) {
     echo "Erro ao tentar inserir dados: {$e->getMessage()}" . PHP_EOL;
 }
-
-echo $sqlInserir . PHP_EOL;
