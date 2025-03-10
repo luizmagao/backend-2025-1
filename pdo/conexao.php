@@ -35,4 +35,7 @@ $pdo = new PDO('sqlite:' . $caminho);
 
 // listar estudantes
 $resultado = $pdo->query('SELECT * FROM estudantes WHERE id = 1;');
-print_r($resultado->fetch(PDO::FETCH_ASSOC));
+
+while ($dadosEstudante = $resultado->fetch(PDO::FETCH_ASSOC)) {
+    echo $dadosEstudante["data_nascimento"] . PHP_EOL;
+}
