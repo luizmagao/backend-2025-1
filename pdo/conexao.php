@@ -34,5 +34,5 @@ $pdo = new PDO('sqlite:' . $caminho);
 // }
 
 // listar estudantes
-$resultado = $pdo->query('SELECT * FROM estudantes;');
-print_r($resultado->fetchAll(PDO::FETCH_ASSOC));
+$resultado = $pdo->query('SELECT * FROM estudantes WHERE id = 1;');
+print_r($resultado->fetch(PDO::FETCH_ASSOC));
