@@ -23,11 +23,11 @@ try {
         INSERT INTO estudantes 
         (id, nome, data_nascimento)
         VALUES
-        (?, ?, ?);
+        (:id, :nome, :data_nascimento);
     ";
     $statement = $pdo->prepare($sqlInserir);
-    $statement->bindValue(2, 'Sílvio');
-    $statement->bindValue(3, '2025-01-01');
+    $statement->bindValue(':nome', 'Antonio Valdico');
+    $statement->bindValue(':data_nascimento', '2024-06-30');
     if ($statement->execute()) {
         echo "Estudante inserido." . PHP_EOL;
     }
