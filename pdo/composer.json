@@ -1,17 +1,18 @@
 {
-    "name": "luizmagao/pdo-sqlite",
-    "description": "Cadastro de estudantes",
-    "type": "project",
-    "autoload": {
-        "psr-4": {
-            "Luizmagao\\PdoSqlite\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Luizmagao",
-            "email": "luizmagao@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "luizmagao/pdo-sqlite",
+  "description": "Cadastro de estudantes",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Luizmagao\\PdoSqlite\\": "src/",
+      "Domain\\Model\\": "src/Domain/Model/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Luizmagao",
+      "email": "luizmagao@gmail.com"
+    }
+  ],
+  "require": {}
 }

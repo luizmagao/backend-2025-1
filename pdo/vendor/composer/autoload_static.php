@@ -11,12 +11,20 @@ class ComposerStaticInitfda96fd8778e0087f6b85e1c786c0083
         array (
             'Luizmagao\\PdoSqlite\\' => 20,
         ),
+        'D' => 
+        array (
+            'Domain\\Model\\' => 13,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Luizmagao\\PdoSqlite\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Domain\\Model\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Domain/Model',
         ),
     );
 

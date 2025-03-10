@@ -1,22 +1,20 @@
 <?php
 
-namespace Luizmagao\PdoSqlite\Domain\Model;
-
-use DateTimeImmutable;
+namespace Domain\Model;
 
 class Estudante
 {
 
     private ?int $id;
     private string $nome;
-    private DateTimeImmutable $data_nascimento;
+    private string $data_nascimento;
 
-    public function __construct(?int $id, string $nome, DateTimeImmutable $data_nascimento)
-    {
-        $this->id = $id;
-        $this->nome = $nome;
-        $this->data_nascimento = $data_nascimento;
-    }
+    // public function __construct(?int $id, string $nome, string $data_nascimento)
+    // {
+    //     $this->id = $id;
+    //     $this->nome = $nome;
+    //     $this->data_nascimento = $data_nascimento;
+    // }
 
     public function id(): ?int
     {
@@ -28,8 +26,13 @@ class Estudante
         return $this->nome;
     }
 
-    function dataNascimento(): DateTimeImmutable
+    function dataNascimento(): string
     {
         return $this->data_nascimento;
+    }
+
+    function idade(): int
+    {
+        return 39;
     }
 }

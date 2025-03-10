@@ -1,5 +1,7 @@
 <?php
 
+use Domain\Model\Estudante;
+
 $caminho = __DIR__ . '/bancodedados/banco.sqlite';
 $pdo = new PDO('sqlite:' . $caminho);
 
@@ -18,25 +20,29 @@ $pdo = new PDO('sqlite:' . $caminho);
 // }
 
 // Inserir estudantes na entidade
-try {
-    $sqlInserir = "
-        INSERT INTO estudantes 
-        (id, nome, data_nascimento)
-        VALUES
-        (:id, :nome, :data_nascimento);
-    ";
-    $statement = $pdo->prepare($sqlInserir);
-    $statement->bindValue(':nome', 'Antonio Valdico');
-    $statement->bindValue(':data_nascimento', '2024-06-30');
-    if ($statement->execute()) {
-        echo "Estudante inserido." . PHP_EOL;
-    }
-} catch (PDOException $e) {
-    echo "Erro ao tentar inserir dados: {$e->getMessage()}" . PHP_EOL;
-}
+// try {
+//     $sqlInserir = "
+//         INSERT INTO estudantes 
+//         (id, nome, data_nascimento)
+//         VALUES
+//         (:id, :nome, :data_nascimento);
+//     ";
+//     $statement = $pdo->prepare($sqlInserir);
+//     $statement->bindValue(':nome', 'Antonio Valdico');
+//     $statement->bindValue(':data_nascimento', '2024-06-30');
+//     if ($statement->execute()) {
+//         echo "Estudante inserido." . PHP_EOL;
+//     }
+// } catch (PDOException $e) {
+//     echo "Erro ao tentar inserir dados: {$e->getMessage()}" . PHP_EOL;
+// }
 
 // listar estudantes
-// $resultado = $pdo->query('SELECT * FROM estudantes WHERE id = 1;');
+$resultado = $pdo->query('SELECT * FROM estudantes;');
+
+$estudantesLista = $resultado->fetchAll(PDO::FETCH_CLASS, Estudante::class);
+
+var_dump($estudantesLista);
 
 // while ($dadosEstudante = $resultado->fetch(PDO::FETCH_ASSOC)) {
 //     echo $dadosEstudante["data_nascimento"] . PHP_EOL;
