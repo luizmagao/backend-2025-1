@@ -52,8 +52,6 @@ foreach ($listaDadosEstudantes as $dadoEstudante) {
     );
 }
 
-var_dump($listaEstudantes);
-
-// while ($dadosEstudante = $resultado->fetch(PDO::FETCH_ASSOC)) {
-//     echo $dadosEstudante["data_nascimento"] . PHP_EOL;
-// }
+foreach ($listaEstudantes as $estudante) {
+    echo "nome: {$estudante->nome()} - {$estudante->idade()}" . PHP_EOL;
+}
