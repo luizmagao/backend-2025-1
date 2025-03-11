@@ -4,8 +4,7 @@
   "type": "project",
   "autoload": {
     "psr-4": {
-      "Luizmagao\\PdoSqlite\\": "src/",
-      "Domain\\Model\\": "src/Domain/Model/"
+      "Luizmagao\\PdoSqlite\\": "src/"
     }
   },
   "authors": [

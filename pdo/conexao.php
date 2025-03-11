@@ -1,6 +1,6 @@
 <?php
 
-use Domain\Model\Estudante;
+use Luizmagao\PdoSqlite\Domain\Model\Estudante;
 
 $caminho = __DIR__ . '/bancodedados/banco.sqlite';
 $pdo = new PDO('sqlite:' . $caminho);
