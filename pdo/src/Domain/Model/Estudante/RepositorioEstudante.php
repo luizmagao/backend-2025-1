@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Model;
+namespace Luizmagao\PdoSqlite\Domain\Model;
 
 interface RepositorioEstudante
 {
