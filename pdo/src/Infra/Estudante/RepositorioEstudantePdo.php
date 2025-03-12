@@ -17,7 +17,20 @@ class RepositorioEstudantePdo implements RepositorioEstudante
 
     public function adicionar(Estudante $estudante): Estudante
     {
-        return new Estudante('', '', '');
+        $sql = "INSERT INTO estudantes (nome, data_nascimento) VALUES (:nome, :data_nascimento);";
+        $statements = $this->conexao->prepare($sql);
+        $statements->bindValue('nome', $estudante->nome());
+        $statements->bindValue('data_nascimento', $estudante->dataNascimento());
+        $statements->execute();
+
+        $sql = "SELECT * FROM estudantes ORDER BY id DESC LIMIT 1;";
+        $statements = $this->conexao->query($sql);
+        $estudante = $statements->fetch(PDO::FETCH_ASSOC);
+        return new Estudante(
+            $estudante['id'],
+            $estudante['nome'],
+            $estudante['data_nascimento']
+        );
     }
 
     function buscarTodos(): array
