@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Luizmagao\\PdoSqlite\\' => array($baseDir . '/src'),
-    'Domain\\Model\\' => array($baseDir . '/src/Domain/Model'),
 );

@@ -1,6 +1,6 @@
 <?php
 
-namespace Luizmagao\PdoSqlite\Domain\Model;
+namespace Luizmagao\PdoSqlite\Domain\Model\Estudante;
 
 class Estudante
 {

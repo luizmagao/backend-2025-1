@@ -38,20 +38,20 @@ $pdo = new PDO('sqlite:' . $caminho);
 // }
 
 // listar estudantes
-$resultado = $pdo->query('SELECT * FROM estudantes;');
+// $resultado = $pdo->query('SELECT * FROM estudantes;');
 
-$listaDadosEstudantes = $resultado->fetchAll(PDO::FETCH_ASSOC);
+// $listaDadosEstudantes = $resultado->fetchAll(PDO::FETCH_ASSOC);
 
-$listaEstudantes = [];
+// $listaEstudantes = [];
 
-foreach ($listaDadosEstudantes as $dadoEstudante) {
-    $listaEstudantes[] = new Estudante(
-        $dadoEstudante['id'],
-        $dadoEstudante['nome'],
-        $dadoEstudante['data_nascimento'],
-    );
-}
+// foreach ($listaDadosEstudantes as $dadoEstudante) {
+//     $listaEstudantes[] = new Estudante(
+//         $dadoEstudante['id'],
+//         $dadoEstudante['nome'],
+//         $dadoEstudante['data_nascimento'],
+//     );
+// }
 
-foreach ($listaEstudantes as $estudante) {
-    echo "nome: {$estudante->nome()} - {$estudante->idade()}" . PHP_EOL;
-}
+// foreach ($listaEstudantes as $estudante) {
+//     echo "nome: {$estudante->nome()} - {$estudante->idade()}" . PHP_EOL;
+// }

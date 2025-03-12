@@ -2,8 +2,8 @@
 
 namespace Luizmagao\PdoSqlite\Infra\Estudante;
 
-use Luizmagao\PdoSqlite\Domain\Model\Estudante;
-use Luizmagao\PdoSqlite\Domain\Model\RepositorioEstudante;
+use Luizmagao\PdoSqlite\Domain\Model\Estudante\Estudante;
+use Luizmagao\PdoSqlite\Domain\Model\Estudante\RepositorioEstudante;
 use PDO;
 
 class RepositorioEstudantePdo implements RepositorioEstudante
