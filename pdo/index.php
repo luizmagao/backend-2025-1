@@ -9,7 +9,11 @@ use Luizmagao\PdoSqlite\Infra\Estudante\RepositorioEstudantePdo;
 $caminho = __DIR__ . '/bancodedados/banco.sqlite';
 $pdo = new PDO('sqlite:' . $caminho);
 
-$estudante = new Estudante(3, 'Laura Lívia', '2025-10-11');
+$id = rand(10, 9999999);
+$nome = $argv[1];
+$data_nascimento = $argv[2];
+
+$estudante = new Estudante($id, $nome, $data_nascimento);
 $repositorio = new RepositorioEstudantePdo($pdo);
 $estudanteSalvo = $repositorio->adicionar($estudante);
 
